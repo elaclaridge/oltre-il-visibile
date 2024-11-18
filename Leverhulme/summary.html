@@ -1,0 +1,147 @@
+<HTML>
+<HEAD>
+<TITLE>Image interpretation via spectral characterisation models</TITLE>
+</HEAD>
+<BODY bgcolor="#f8f8ff">
+
+<center>
+<H1>Image interpretation via material specific spectral characterisation
+models</H1>
+Ela Claridge, School of Computer Science, The University of Birmingham
+<p>
+<i>Supported by the Leverhulme Trust grant number F/00 094/M</i>
+</center>
+<p>
+
+<h2>Context</h2>
+
+Computer image interpretation is concerned with applying computational and
+mathematical techniques to digital images in order to extract specific
+information from image data. Most methods have been developed to interpret
+images of the three-dimensional world. As surfaces were considered to be
+the most ecologically important structures of the world, images were
+assumed to represent primarily light reflected from surfaces [1-2]. The
+originality of our method stems from the insight that the "appearance of a
+surface [...] is a result of [...] processes at and within this
+surface"[3]. This insight is at the heart of a novel and generic method of
+image interpretation which complements the existing techniques.
+<p>
+The image is considered to be the product of the interaction of light with
+the constituents of the scene. The physics of light transport is utilised
+to construct a spectral characterisation model - a mathematical model
+capable of predicting the range of colouration expected from materials
+known to occur within the scene. By comparing image data to these
+predictions material characteristics can be deduced.
+<p>
+Our group has successfully applied this approach to develop a novel skin
+imaging system [4-5]. From two images of the skin, one colour and one
+acquired through a near-infrared filter, informative parametric maps are
+computed, containing detailed information about the concentration of
+melanin and blood and collagen thickness across the imaged skin [5].
+Current medical trials are showing the maps to be of great value in the
+diagnosis of melanoma [6]. 
+
+<h2>Objectives</h2>
+The ultimate goal of the project is to formulate a generic approach to
+image interpretation based on the spectral characterisation models. This
+should enable the structure and composition of the materials and tissues 
+to be deduced from their images acquired through a small number of optical
+filters using a standard digital camera.
+<p>
+The specific objectives of this work are to:
+<ul>
+<li>Develop theoretical foundations for the new imaging method so that the
+relevant aspects of various contributing disciplines are brought together
+into a unified framework.
+<li>Develop a principled approach  to specifying how the general method is to
+be applied to various specific materials, including predictions of whether
+a particular class of materials is suitable for this kind of analysis.
+<li>Develop methodology for predicting optimal filters for specific materials.
+<li>Develop at least two examples of the application of the method to real
+materials.
+</ul>
+
+<h2>Significance and originality</h2>
+The proposed project is interdisciplinary, it draws ideas from physics,
+chemistry, applied mathematics, computer science and visual perception.
+Together, these ideas expand the boundaries of what is currently possible
+through image interpretation.  
+<p>
+The key novelty of our approach is in its development and exploitation of
+the spectral characterisation models of specific materials. The structure
+of the model allows us to create a simple cross-reference between the
+object composition and its colour (or some richer spectral
+characterisation). As the model is constructed using physics (rather than,
+for example, statistics) the physical origin of colours seen in images can
+be explained with reference to the actual physical phenomena. The
+mathematical form of the model allows us to take advantage of the well
+developed spectrophotometric quantitative methodologies whilst presenting
+the results as images, which convey rich spatial information.
+<p>
+The practical significance of the proposed method is that for suitable
+classes of materials, quantitative estimates of their composition can be
+obtained from their image data. The method is instant and non-invasive.
+Once a set of optical filters is defined for a given class of material,
+the filtering during the image acquisition phase followed by nearly real
+time post-processing enables appropriate image sets  to be presented for
+interpretation. The underlying scientific technique is fundamentally
+generic and is the potential basis of a unique non-destructive testing
+technology which does not require complex equipment and could be
+implemented using only a digital camera with filters. The applicability of
+the method to a given class of materials can be assessed due to the
+underlying predictive theory.
+
+<h2>Methods</h2>
+To construct spectral characterisation models we shall use the well known
+`Monte Carlo' computational method. By supplying parameters characterising
+a given material (the number and thickness of layers, optical coefficients
+of the layer components, etc),  this method can be used to computationally
+simulate interactions of light photons with the material and generate the
+spectrum(a) characterising the remitted light. A collection of such
+spectra, linked to the input parameters, is a spectral characterisation
+model.
+<p>
+A spectrum specifies the light levels associated with each of several
+hundred discrete spectral wavelengths. Although it is possible to acquire
+digital images corresponding to many wavelengths, this is costly in terms
+of storage space and processing time. Standard colour video cameras
+"compress" the whole light spectrum to just three components: red, green
+and blue. This is achieved by filtering the incoming light through red,
+green and blue filters. Most people find that this represents images quite
+adequately, because these three filters are tuned to the colours that the 
+human visual system perceives best. These filters are, however, unlikely
+to be the best choice for all the materials. One of the most important
+parts of the project is to develop general methods for defining filters
+which would be most appropriate for specific materials. An ideal filter
+will produce an image showing even small variations in a property of  a
+single component of a material. There exist statistical and mathematical
+methods for finding such "optimal" filters. 
+<p>
+Finally, to evaluate the methodology, the developed techniques will be
+practically applied to images from two different domains. Possible
+candidate domains include agriculture, ophthalmology and remote sensing.
+
+<h2>References</h2>
+<font size="2">
+<ol>
+<li>Marr D (1982) Vision, a Computational Investigation into Human Perception
+and Processing of Visual Information: Freeman.
+<li>Watt R (1991) Understanding Vision: Academic Press.
+<li>Egan WG, Hilgeman TW (1979) Optical Properties of Inhomogeneous Materials:
+Academic Press.
+<li>Cotton SD, Claridge E (1996) Developing a predictive model of human skin
+colouring, Vanmetter RL, Beutel J Eds., Proceedings of the SPIE Medical
+Imaging 1996 vol. 2708, 814-825.
+<li>Cotton SD, Claridge E, Hall PN (1997) Noninvasive skin imaging, 
+Information Processing in Medical Imaging (Springer-Verlag, LNCS 1230),
+501-507.
+<li>Moncrieff, M, Cotton SD, Claridge E, Hall PN, (2000) Spectrophotometric
+Intracutaneous Analysis assists in the identification of dermatoscopic
+features. J.Assoc Derm Venereol,220.
+</ol>
+<p><p>
+<em>Page maintained by Ela Claridge</em>
+</font>
+</BODY>
+</HTML>
+
