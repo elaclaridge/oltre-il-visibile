@@ -1,1 +1,1 @@
-# oltre-il-visibile
+I am Professor Emerita of Medical Image Analysis in the School of Computer Science, University of Birmingham, UK. My research encompasses a number of different disciplines including physics of image formation, human visual perception and processes of medical diagnosis. I work and collaborate with computer scientists, physicists, engineers and clinical researchers. Results of my research are being used in clinical practice to help with diagnosis.
