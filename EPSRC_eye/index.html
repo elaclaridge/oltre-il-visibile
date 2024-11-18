@@ -1,0 +1,245 @@
+<HTML>
+<font face="Arial">
+
+<TABLE>
+		<TR>
+			<TD valign="top">
+<H2>Physics based image interpretation to aid the detection of early signs of retinopathies</H2>
+EPSRC Grant GR/S09906/01
+
+<h3>The team</h3>
+Antonio Calcagni, Ela Claridge, Jon Gibson, Mark O'Dwyer, Felipe Orihuela Espina, Iain Styles
+<br>
+<i>School of Computer Science, The Unversity of Birmingham and Department of Ophthalmology, Heartlands Hospital, Birmingham</i>
+</TD>
+<TD valign="top">
+<IMG src="http://www.cs.bham.ac.uk/~exc/Images/fundus.jpg" width="194" height="194" border="0" alt="">
+</TD>
+</TR>
+</TABLE>
+
+
+
+<h3>Key advances</h3>
+
+The aim of the project was to develop and validate a new physics-based image interpretation method for the ocular fundus and to evaluate its clinical potential.
+
+The project has developed a detailed optical model of fundus reflectance under diffuse illumination using Monte Carlo simulation to solve the radiative transport equation. 
+The structural layers of our fundus model include the lens, the ocular media, the neural retina, the Retinal Pigment Epithelium (RPE), the choroid and the sclera. Each layer is characterised by its thickness, refractive index, anisotropy factor, absorption coefficient and scattering coefficient. The optical properties of each layer are determined by its constituents. The underlying properties of the tissue can be regarded as constant, with the main variability being due to changes in the concentration of haemoglobins in the retina and the choroid; melanin in the RPE and the choroid, and macular pigment in the neural retina.
+As a refinement over the existing models, we have shown that our model can separate the contributions from retinal and choroidal blood, and choroidal and RPE melanin. 
+
+<!-- Spectral variability figures --> 
+<p>
+<center><b>Variation of the remitted spectra with respect to changes in the concentration of retinal pigments</b></center>
+<p>
+<table align="center" cellspacing="2" cellpadding="2" border="0">
+<tr>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/crxvar.png" width="240" height="180" border="0" alt="">
+	</td>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/crhvar.png" width="240" height="180" border="0" alt="">
+</td>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/crmvar.png" width="240" height="180" border="0" alt="">
+</td>
+</tr>
+    <td align="center">Macular Pigment</td>
+    <td align="center">Retinal Haemoglobins</td>
+    <td align="center">RPE melanin</td>
+<tr>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/ccmvar.png" width="240" height="180" border="0" alt="">
+</td>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/cchvar.png" width="240" height="180" border="0" alt="">
+</td>
+</tr>
+<tr>
+    <td align="center">Choroidal Melanin</td>
+    <td align="center">Choroidal Haemoglobins</td>
+</tr>
+</table>
+<p><p>
+
+
+A crucial advance has been the development of a method for the recovery of parameters (a "model inversion") characterising the ocular fundus without the need for image calibration. The method is derived from an analysis of the imaging process and is completely generic. It has been subsequently applied to <a href="#other_pubs">other imaging problems </a>.
+<!-- link to Related publications -->
+<p>
+We have developed a multispectral image acquisition system which can capture images from large areas of the ocular fundus at wavelengths ranging from 400nm to 1100nm. Multispectral image data sets have been collected for healthy young volunteers from a variety of ethnic backgrounds including Caucasians, African, Afro-Carribean and Mediterranean. 
+All technically sound image sets are available for other researchers from the Web repository <!--<a href="http://www.cs.bham.ac.uk/research/fundus-multispectral/">Web repository</a>.-->
+<!-- link to database -->
+<p>
+By applying the inverse model to every point in a multi-spectral image set, we can compute the values of the model parameters which describe the fundus tissue at that point and construct parametric maps which show the variation of each parameter across the entire image.
+Figures below show RGB images and the corresponding parametric maps for the Macular Pigment and the Retinal Haemoglobins. The maps are consistent with the anatomy and physiology of the fundus.
+
+<!-- FUNDUS FIGURES -->
+<p>
+<a name="fig_maps"></a>
+<center><b>RGB images and their parametric maps</b> (bright=high level)</center>
+<p>
+
+<table align="center" cellspacing="2" cellpadding="2" border="2">
+<tr>
+    <td align="center">
+	<!-- rgb1 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/sub6argb.png" width="200" height="200" border="0" title="RGB_6" alt="">
+</td>
+<td>RGB image of a normal subject.
+	</td>
+    <td align="center">
+	<!-- pm1 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/sub6la_mp.png" width="200" height="200" border="2" title="RGB_6" alt="">
+</td>
+<td>Parametric map of the Macular Pigment; note the elevated levels of the pigment in the foveal area.
+	</td>
+</tr>
+<tr>
+    <td align="center">
+	<!-- rgb2 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/sub3rgb.png" width="200" height="200" border="2" alt="">
+</td><td>
+RGB image of a normal subject.
+	</td>
+    <td align="center">
+	<!-- pm2 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/sub3lb_rethaem.png" width="200" height="200" border="2" alt="">
+</td><td>Parametric map of the Retinal Haemoglobins (RHb); retinal vessels can be clearly seen; note the decreased levels of RHb in the foveal avascular zone. 
+	</td>
+</tr>
+<tr>
+    <td>
+	<!-- rgb3 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/subargb.png" width="200" height="200" border="2" alt="">
+</td><td>RGB image of a patient with retinal haemorrhage.
+	</td>
+    <td>
+	<!-- pm3 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/subal3_rethaem.png" width="200" height="200" border="0" alt="">
+</td><td>Parametric map of the Retinal Haemoglobins. note the elevated levels of RHb in the foveal area where retinal haemorrhage was diagnosed.
+	</td>
+</tr>
+</table>
+<p><p>
+
+<a name="project_pubs"></a>
+<h3>Publications arising from the project</h3>
+
+Styles IB, Calcagni A, Claridge E, Orihuela Espina F, Gibson
+JM (submitted) Quantitative analysis of multispectral fundus images. <i>Medical
+Image Analysis </i>. Also available as <i>Technical Report CSR-05-08</i>,
+School of Computer Science, The University of Birmingham, 2005. 
+<A HREF="http://www.cs.bham.ac.uk/~exc/Research/Papers/CSR-05-08.pdf">CSR-05-08.pdf</A></p>
+
+<p>Calcagni A, Styles IB, Claridge E, Orihuela Espina F, Gibson JM (2005)
+Multispectral fundus analysis. European Association for Vision and Eye Research
+Meeting EVER'05, Vilamoura, Portugal, October 2005. <i>Abstract in Ophthalmic
+Research</i> 37 (S1), 72. <a href="http://www.ever.be/EVER-05-abstractbook.pdf">Abstracts.pdf
+</a>and <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/EVER05_poster.ppt.gz">Poster
+(pdf.gz)</a> </p>
+
+<p>Preece S, Styles I, Cotton S, Claridge E, Calcagni A (2005) Model- based
+parameter recovery from uncalibrated optical images. Medical Image Computing
+and Computer Assisted Intervention (MICCAI 2005) Palm Springs, California,
+October 2005. LNCS vol. 3750, 509-516. <a href="http://www.cs.bham.ac.uk/~ibs/miccai05.pdf">Conference paper (pdf)</a>
+</p>
+
+<p>Styles IB, Claridge E, Orihuela Espina F, Calcalgni A, Gibson JM (2005)
+Quantitative interpretation of multispectral fundus images. Medical Imaging
+2005: Physiology, Function, and Structure from Medical Images, Proceedings of
+SPIE Vol. 5746. Amini AA, Armando Manduca A Eds. (SPIE, Bellingham, WA, 2005),
+267-278. <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/spie05_paper.pdf">Conference
+paper (pdf)</a> </p>
+
+<p>Orihuela Espina F (2005) Modelling and Verification of the Diffuse
+Reflectance of the Ocular Fundus. PhD Thesis. School of Computer Science, The
+University of Birmingham. <!--<A HREF="http://www.cs.bham.ac.uk/~exc/Research/Papers/Felipe_thesis.pdf.gz"> Thesis.pdf.gz</A>--></p>
+
+<p>O'Dwyer M, Claridge E (2004) Single parameter recovery from modelled
+spectra: A comparison of spectral filter optimisation with standard multivariate
+approaches. Technical Report CSR-04-10, School of Computer Science, The
+University of Birmingham. (to be submitted to Pattern Recognition) <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/sfo.pdf%20">CS-04-10.pdf</a>
+</p>
+
+<p>Preece SJ, Claridge E (2004) Physics-based approach to geometry insensitive
+recovery of quantitative scene parameters from images. Technical Report
+CSR-04-08, School of Computer Science, The University of Birmingham. <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/CS-04-08.pdf">CS-04-08.pdf</a>
+</p>
+
+<p>Orihuela-Espina, Claridge E, F Styles IB (2004) Validation of a physics
+based model of the reflectance of the ocular fundus. ARVO, Florida, April 2004.
+Abstract in Investigative Ophthalmology and Visual Science 2004, 45: E-Abstract
+2789. <a
+href="http://abstracts.iovs.org/cgi/content/abstract/45/5/2789?maxtoshow=&amp;HITS=10&amp;hits=10&amp;RESULTFORMAT=1&amp;author1=styles&amp;andorexacttitle=and&amp;andorexacttitleabs=and&amp;andorexactfulltext=and&amp;searchid=1091199910150_8929&amp;stored_search=&amp;FIRSTINDEX=0&amp;sortspec%20">Abstract
+</a>and <a href="http://www.cs.bham.ac.uk/~ibs/arvo04fxo.ppt">Poster.ppt </a></p>
+
+<p>Styles IB, Claridge E, Orihuela-Espina F (2004) Quantitative interpretation
+of uncalibrated fundal images. ARVO, Florida, April 2004. Abstract in Investigative
+Ophthalmology and Visual Science 2004, 45: E-Abstract 2792. <a
+href="http://abstracts.iovs.org/cgi/content/abstract/45/5/2792?maxtoshow=&amp;HITS=10&amp;hits=10&amp;RESULTFORMAT=1&amp;author1=styles&amp;andorexacttitle=and&amp;andorexacttitleabs=and&amp;andorexactfulltext=and&amp;searchid=1091199910150_8929&amp;stored_search=&amp;FIRSTINDEX=0&amp;sortspec%20">Abstract
+</a>and <a href="http://www.cs.bham.ac.uk/~ibs/arvo04.pdf">Poster.pdf </a></p>
+
+<p>Orihuela F, Claridge E (2003) A new optical imaging method for the ocular
+fundus. Medical Imaging Research Symposium, San Diego, August 2003. Abstract in
+Medical Physics 30(6), 1540. </p>
+
+<p>Orihuela-Espina F, Claridge E, Preece SJ (2003) Histological parametric maps
+of the human ocular fundus: preliminary results. Medical Image Understanding
+and Analysis 2003, 133-136. <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/OrihuelaMIUA2003_3.pdf">Conference
+paper (pdf) </a></p>
+
+<a name="p_skin"></a>
+<p>Preece SJ, Claridge E (2004) Spectral filter optimisation for the recovery
+of parameters which describe human skin. IEEE Pattern Analysis and Machine
+Intelligence, 26(7), 913-922. <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/117158-2.pdf">pdf</a> </p>
+
+<p>Claridge E, Preece SJ (2003) An inverse method for the recovery of tissue
+parameters from colour images. Information Processing in Medical Imaging
+(IPMI), Taylor C and Noble JA (Eds.) LNCS 2732, 306-317. Springer. <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/ipmi03.pdf">pdf</a> </p>
+
+<h3>Articles in professional press</h3>
+
+Roberts JP (2003) Can software help prevent blindness?
+Biophotonics International, January/February 2003, 18-19. </p>
+
+<p>Wrage H (2002) Under the skin. Professional Engineering 15(23A): Medical
+Engineering Supplement, December 2002, S6-S7. </p>
+
+<a name="other_pubs"></a>
+<h3>Related publications </h3>
+
+<a name="p_fret"></a>
+Claridge E, Powner D, Wakelam M (2005) The analysis of
+fluorescence microscopy images for FRET detection. Medical Image Understanding
+and Analysis conference MIUA'05, Mirmehdi M (Ed), 263-270. <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/miua05_fret.pdf">pdf </a></p>
+
+<a name="p_astro"></a>
+<p>O'Dwyer M, Claridge E, Ponman T, Raychaudhury S. (2005) Mapping the physical
+properties of cosmic hot gas with hyper-spectral imaging. IEEE Workshop on
+Applications of Computer Vision, Colorado, January 2005, 185-190. <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/ieee_astro_05.pdf">pdf </a></p>
+
+<p>Temple R, Claridge E, O'Dwyer M, Ponman T, Raychaudhury S (2005) Mapping the
+physical properties of cosmic hot gas with hyper- spectral imaging. Royal
+Astronomical Society National Astronomy Meeting 2005, Birmingham, UK.
+(abstract) </p>
+
+<a name="p_colon"></a>
+<p>Hidovic D, Claridge E (2005) Modelling and validation of spectral
+reflectance for the colon. Physics in Medicine and Biology 50, 1071- 1093. <a
+href="http://www.cs.bham.ac.uk/~exc/Research/Papers/pmb5_6_003.pdf">pdf</a> </p>
+<p>
+
+
+<h3>Database of multispectral images</h3>
+
+As a part of the project, a set of 
+<a href="http://www.cs.bham.ac.uk/research/fundus-multispectral/"> multispectral images of the fundus</a> 
+of healthy normal volunteers from a variety of ethnic backgrounds has
+been collected.
+
+</font>
+</HTML>

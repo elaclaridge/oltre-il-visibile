@@ -1,0 +1,134 @@
+<HTML>
+<font face="Arial">
+
+<TABLE>
+		<TR>
+			<TD valign="top">
+<H2>Physics based image interpretation to aid the detection of early signs of retinopathies</H2>
+EPSRC Grant GR/S09906/01
+
+<h3>The team</h3>
+Antonio Calcagni, Ela Claridge, Jon Gibson, Mark O'Dwyer, Felipe Orihuela Espina, Iain Styles
+<br>
+<i>School of Computer Science, The Unversity of Birmingham and Department of Ophthalmology, Heartlands Hospital, Birmingham</i>
+</TD>
+<TD valign="top">
+<IMG src="http://www.cs.bham.ac.uk/~exc/Images/fundus.jpg" width="194" height="194" border="0" alt="">
+</TD>
+</TR>
+</TABLE>
+
+
+
+<h3>Key advances</h3>
+
+The aim of the project was to develop and validate a new physics-based image interpretation method for the ocular fundus and to evaluate its clinical potential.
+
+The project has developed a detailed optical model of fundus reflectance under diffuse illumination using Monte Carlo simulation to solve the radiative transport equation. 
+The structural layers of our fundus model include the lens, the ocular media, the neural retina, the Retinal Pigment Epithelium (RPE), the choroid and the sclera. Each layer is characterised by its thickness, refractive index, anisotropy factor, absorption coefficient and scattering coefficient. The optical properties of each layer are determined by its constituents. The underlying properties of the tissue can be regarded as constant, with the main variability being due to changes in the concentration of haemoglobins in the retina and the choroid; melanin in the RPE and the choroid, and macular pigment in the neural retina.
+As a refinement over the existing models, we have shown that our model can separate the contributions from retinal and choroidal blood, and choroidal and RPE melanin. 
+
+<!-- Spectral variability figures --> 
+<p>
+<center><b>Variation of the remitted spectra with respect to changes in the concentration of retinal pigments</b></center>
+<p>
+<table align="center" cellspacing="2" cellpadding="2" border="0">
+<tr>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/crxvar.png" width="200" height="150" border="0" alt="">
+	</td>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/crhvar.png" width="200" height="150" border="0" alt="">
+</td>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/crmvar.png" width="200" height="150" border="0" alt="">
+</td>
+
+
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/ccmvar.png" width="200" height="150" border="0" alt="">
+</td>
+    <td align="center"><img src="http://www.cs.bham.ac.uk/~exc/Research/Images/cchvar.png" width="200" height="150" border="0" alt="">
+</td>
+</tr>
+<tr>
+    <td align="center">Macular Pigment</td>
+    <td align="center">Retinal Haemoglobins</td>
+    <td align="center">RPE melanin</td>
+
+    <td align="center">Choroidal Melanin</td>
+    <td align="center">Choroidal Haemoglobins</td>
+</tr>
+</table>
+<p><p>
+
+
+A crucial advance has been the development of a method for the recovery of parameters (a "model inversion") characterising the ocular fundus without the need for image calibration. The method is derived from an analysis of the imaging process and is completely generic. It has been subsequently applied to other imaging problems.
+<!-- link to Related publications -->
+<p>
+We have developed a multispectral image acquisition system which can capture images from large areas of the ocular fundus at wavelengths ranging from 400nm to 1100nm. Multispectral image data sets have been collected for healthy young volunteers from a variety of ethnic backgrounds including Caucasians, African, Afro-Carribean and Mediterranean. 
+<!--<All technically sound image sets are available for other researchers from the Web repository a href="http://www.cs.bham.ac.uk/research/fundus-multispectral/">Web repository</a>.-->
+<!-- link to database -->
+<p>
+By applying the inverse model to every point in a multi-spectral image set, we can compute the values of the model parameters which describe the fundus tissue at that point and construct parametric maps which show the variation of each parameter across the entire image.
+Figures below show RGB images and the corresponding parametric maps for the Macular Pigment and the Retinal Haemoglobins. The maps are consistent with the anatomy and physiology of the fundus.
+
+<!-- FUNDUS FIGURES -->
+<p>
+<a name="fig_maps"></a>
+<center><b>RGB images and their parametric maps</b> (bright=high level)</center>
+<p>
+
+<table align="center" cellspacing="2" cellpadding="2" border="2">
+<tr>
+    <td align="center">
+	<!-- rgb1 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/sub6argb.png" width="200" height="200" border="0" title="RGB_6" alt="">
+</td>
+<td>RGB image of a normal subject.
+	</td>
+    <td align="center">
+	<!-- pm1 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/sub6la_mp.png" width="200" height="200" border="2" title="RGB_6" alt="">
+</td>
+<td>Parametric map of the Macular Pigment; note the elevated levels of the pigment in the foveal area.
+	</td>
+</tr>
+<tr>
+    <td align="center">
+	<!-- rgb2 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/sub3rgb.png" width="200" height="200" border="2" alt="">
+</td><td>
+RGB image of a normal subject.
+	</td>
+    <td align="center">
+	<!-- pm2 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/sub3lb_rethaem.png" width="200" height="200" border="2" alt="">
+</td><td>Parametric map of the Retinal Haemoglobins (RHb); retinal vessels can be clearly seen; note the decreased levels of RHb in the foveal avascular zone. 
+	</td>
+</tr>
+<tr>
+    <td>
+	<!-- rgb3 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/subargb.png" width="200" height="200" border="2" alt="">
+</td><td>RGB image of a patient with retinal haemorrhage.
+	</td>
+    <td>
+	<!-- pm3 -->
+	<img src="http://www.cs.bham.ac.uk/~exc/Research/Images/subal3_rethaem.png" width="200" height="200" border="0" alt="">
+</td><td>Parametric map of the Retinal Haemoglobins. note the elevated levels of RHb in the foveal area where retinal haemorrhage was diagnosed.
+	</td>
+</tr>
+</table>
+<p><p>
+
+
+<!--
+<h3>Database of multispectral images</h3>
+
+As a part of the project, a set of 
+<a href="http://www.cs.bham.ac.uk/research/fundus-multispectral/"> multispectral images of the fundus</a> 
+of healthy normal volunteers from a variety of ethnic backgrounds has
+been collected.
+-->
+
+
+
+</font>
+</HTML>
