@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Ela Claridge - skin imaging</title>
+</head>
+
+<body>
+<h1>Image analysis based on an optical model of the skin 
+for detection of early signs of melanoma </h1>
+<BR><h2><i>Funded by EPSRC, grant number GR/M53035</i></h2>
+
+This research is concerned with the characterisation of 
+pigmented skin lesions to help with early diagnosis of malignant melanoma, a skin cancer.
+Out group has developed a novel image analysis method  which uses
+physics-based modelling of optical properties of the skin. The method
+computes parametric maps characterising skin structure and composition. The images
+show histological quantities in the skin, such as concentration
+of pigment melanin, concentration of blood and thickness of collagenous
+tissue. They also show whether melanin is present in the dermis - such
+presence is a very sensitive indicator of melanoma.
+
+<h3>Skin structure</h3>
+The skin consists of a number of layers with distinct function and distinct optical 
+properties. White light shone onto the skin penetrates superficial skin layers and 
+whilst some of it is absorbed, much is remitted back and can be registered by a camera.
+<br>
+<img src="http://www.cs.bham.ac.uk/~exc/Images/skinstructure.jpg" width="469" height="352" border="0" alt="">
+
+<h3>Model of tissue colouration - normal skin</h3>
+The key to the interpretation of image colours in terms of the underlying histological 
+parameters is a model of tissue colouration which provides a cross-reference between 
+the colour and the histology. This model is constructed by computing the spectral 
+composition of light remitted from the skin given parameters specifying its structure 
+and optical properties. This step needs to be carried out only once. As the mapping 
+between the colours and the parameters is unique for the skin, each colour 
+corresponds to one specific set of histological parameters.
+<p>
+Expressed as a fragment of a pseudocode, the process of building of the model of 
+colouration can be described as follows:
+<p>
+</p><table bgcolor="#c0c0c0">
+<tr>
+	<td>
+
+
+<code>
+<pre>
+given 
+	incident light
+	absorption coefficients of melanin and blood
+	scatter coefficient of the papillary dermis
+	scatter coefficient and thickness of the reticular dermis
+	spectral response functions for the red, green blue and nir primaries
+for all valid concentrations of epidermal melanin
+ for all valid concentrations of dermal blood
+  for all valid thicknesses of papillary dermis
+    compute
+	remitted light spectrum
+	colour vector [r  g  b  nir]
+</pre>
+</code>
+
+</td>
+</tr>
+</table>
+<p>
+This forward process computes explicitly tissue colour given a set of histological 
+parameters. As the mapping between the histological parameters and the primaries is 
+unique for the skin, the inverse mapping is possible: from the tissue colour to its 
+histological parameters:
+<p><pre>
+	[r  g  b  nir] <-> [ melanin   haemoglobin  papillary_dermis ]
+</pre><p>
+The quantities <code>[ melanin   haemoglobin  papillary_dermis ]</code> are then used to 
+construct parametric maps.
+<p>
+The model of normal skin colouration is representative of all the normal skins, 
+irrespective of racial origin, age or gender. The structure remains the same, 
+and the only differences are in the magnitudes of the parameters.
+
+
+<h3>Abnormal skin colouration</h3>
+The model above has been constructed for skin which has a normal structure. 
+Skin colouration associated with abnormal conditions does not necessarily have 
+to conform to this model.
+<br><p>
+
+<img src="http://www.cs.bham.ac.uk/~exc/Images/skinmodelgraphs.jpg" width="369" height="531" border="0" alt="">
+</body>
+</html>
